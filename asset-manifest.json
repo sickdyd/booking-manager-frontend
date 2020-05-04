@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/booking-manager-frontend/static/css/main.f9c62464.chunk.css",
+    "main.js": "/booking-manager-frontend/static/js/main.28d2bea0.chunk.js",
+    "main.js.map": "/booking-manager-frontend/static/js/main.28d2bea0.chunk.js.map",
+    "runtime-main.js": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js",
+    "runtime-main.js.map": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js.map",
+    "static/css/2.a72c35d3.chunk.css": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css",
+    "static/js/2.8385c714.chunk.js": "/booking-manager-frontend/static/js/2.8385c714.chunk.js",
+    "static/js/2.8385c714.chunk.js.map": "/booking-manager-frontend/static/js/2.8385c714.chunk.js.map",
+    "index.html": "/booking-manager-frontend/index.html",
+    "precache-manifest.cdaa9d527391d9fb3c1f39507641ae3e.js": "/booking-manager-frontend/precache-manifest.cdaa9d527391d9fb3c1f39507641ae3e.js",
+    "service-worker.js": "/booking-manager-frontend/service-worker.js",
+    "static/css/2.a72c35d3.chunk.css.map": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css.map",
+    "static/css/main.f9c62464.chunk.css.map": "/booking-manager-frontend/static/css/main.f9c62464.chunk.css.map",
+    "static/js/2.8385c714.chunk.js.LICENSE.txt": "/booking-manager-frontend/static/js/2.8385c714.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.511b6c0c.js",
+    "static/css/2.a72c35d3.chunk.css",
+    "static/js/2.8385c714.chunk.js",
+    "static/css/main.f9c62464.chunk.css",
+    "static/js/main.28d2bea0.chunk.js"
+  ]
+}
