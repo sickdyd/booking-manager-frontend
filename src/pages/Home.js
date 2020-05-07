@@ -8,6 +8,7 @@ export default () => {
 
   const [loading, setLoading] = useState(true);
   const [bookings, setBookings] = useState([]);
+  const [points, setPoints] = useState(0);
   const [nextBookings, setNextBookings] = useState([]);
 
   const format = "MMMM Do YYYY, h:mm"
@@ -47,9 +48,15 @@ export default () => {
   }
 
   useEffect(() => {
-    client.getUserBookings(authenticate.getId())
-      .then(res => handleBookings(res.data))
-      .finally(() => setLoading(false))
+
+    Promise.all([
+      client.getUserBookings(authenticate.getId()),
+      client.getPoints(authenticate.getId())  
+    ]).then(values => {
+      handleBookings(values[0].data);
+      setPoints(values[1].data.points);
+    }).finally(() => setLoading(false))
+
   // eslint-disable-next-line
   }, []);
 
@@ -72,7 +79,9 @@ export default () => {
       ? <Spin />
       :
         <>
-          <h3>Future bookings:</h3>
+          <h3>Available points:</h3>
+          {points}
+          <h3 style={{ marginTop: 32 }}>Future bookings:</h3>
           <NextBookings />
           <h3 style={{ marginTop: 32 }}>All bookings</h3>
           <Table {...tableProps} columns={columns} />

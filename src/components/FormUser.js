@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, InputNumber } from "antd";
 
-export default ({ id, name, surname, email, admin, disabled, loading, onComplete }) => {
+export default ({ id, name, surname, email, points, admin, disabled, loading, onComplete }) => {
+
+  console.log(points)
 
   const [checkAdmin, setCheckAdmin] = useState(admin);
   const [checkDisabled, setCheckDisabled] = useState(disabled);
@@ -12,19 +14,23 @@ export default ({ id, name, surname, email, admin, disabled, loading, onComplete
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 10, span: 12 },
+    wrapperCol: { offset: 6, span: 12 },
   };
 
   const onFinish = user => {
     console.log(user);
-    onComplete(user, id);
+    onComplete({
+      ...user,
+      admin: checkAdmin,
+      disabled: checkDisabled
+    }, id);
   }
 
   return (
     <Form
       {...layout}
       name="user"
-      initialValues={{ remember: false, name, surname, email }}
+      initialValues={{ remember: false, name, surname, email, points }}
       onFinish={onFinish}
     >
       <Form.Item
@@ -49,6 +55,14 @@ export default ({ id, name, surname, email, admin, disabled, loading, onComplete
         rules={[{ required: true, message: "Please type a valid email.", type: "email" }]}
       >
         <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Points"
+        name="points"
+        rules={[{ required: true }]}
+      >
+        <InputNumber min={0} />
       </Form.Item>
 
       <Form.Item

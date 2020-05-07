@@ -34,6 +34,12 @@ export default {
       .catch(err => handleError(err))
   },
 
+  getPoints(id) {
+    return axios.get("/users/" + id + "/points")
+      .then(res => res)
+      .catch(err => handleError(err))
+  },
+
   // Admin
 
   getSettings() {

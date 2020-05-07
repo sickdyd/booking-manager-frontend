@@ -61,7 +61,8 @@ export default ({ onComplete, loading, settings }) => {
       cancelationNotice,
       interval,
       expireOffset,
-      slotDuration
+      slotDuration,
+      dailyLimit
     } = settings;
 
     const validSettings = {
@@ -70,6 +71,7 @@ export default ({ onComplete, loading, settings }) => {
       expireOffset,
       slotDuration,
       lastBookableDay: settings.lastBookableDay.unix(),
+      dailyLimit,
       week: weekSettings
     }
 
@@ -129,20 +131,24 @@ export default ({ onComplete, loading, settings }) => {
         <DatePicker allowClear={false} />
       </Form.Item>
 
-      <Form.Item name="slotDuration" label="Slot duration" title="How long a slot will last">
+      <Form.Item name="slotDuration" label="Slot duration (mins)">
         <InputNumber min={5} max={1440} step={5} disabled />
       </Form.Item>
 
-      <Form.Item name="interval" label="Interval">
+      <Form.Item name="interval" label="Interval (mins)">
         <InputNumber min={0} max={1440} step={5} disabled />
       </Form.Item>
 
-      <Form.Item name="expireOffset" label="Slot expiration">
+      <Form.Item name="expireOffset" label="Slot expiration (mins)">
         <InputNumber min={0} max={1440} step={5} />
       </Form.Item>
 
-      <Form.Item name="cancelationNotice" label="Slot cancellation (days)">
+      <Form.Item name="cancelationNotice" label="Slot cancellation (hours)">
         <InputNumber min={0} max={365} step={1} />
+      </Form.Item>
+
+      <Form.Item name="dailyLimit" label="Bookings limit per day">
+        <InputNumber min={0} step={1} />
       </Form.Item>
 
       <Form.Item name="day" label="Day settings">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import authenticate from "../classes/Authenticate";
 import styled from "styled-components";
 import { Menu } from "antd";
-import { HomeOutlined, UserOutlined, CalendarOutlined, KeyOutlined, UserAddOutlined, SlidersOutlined } from "@ant-design/icons";
+import { HomeOutlined, UserOutlined, CalendarOutlined, KeyOutlined, UserAddOutlined, SlidersOutlined, BookOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 
 export default () => {
@@ -52,6 +52,16 @@ export default () => {
             <Menu.Item key="create-user">
               <UserAddOutlined />
               <span className="label">Create user</span>
+            </Menu.Item>
+          :
+            null
+        }
+        {
+          authenticate.isAdmin()
+          ?
+            <Menu.Item key="create-bookings">
+              <BookOutlined />
+              <span className="label">Create bookings</span>
             </Menu.Item>
           :
             null

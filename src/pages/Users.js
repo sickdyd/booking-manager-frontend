@@ -15,6 +15,7 @@ export default () => {
       name: user.name,
       surname: user.surname,
       email: user.email,
+      points: user.points,
       admin: user.admin,
       disabled: user.disabled,
     }));

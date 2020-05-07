@@ -5,6 +5,7 @@ import Schedule from "../pages/Schedule";
 import ChangePassword from "../pages/ChangePassword";
 import Users from "../pages/Users";
 import CreateUser from "../pages/CreateUser";
+import CreateBookings from "../pages/CreateBookings";
 import Settings from "../pages/Settings";
 
 export default () =>
@@ -15,5 +16,6 @@ export default () =>
 
       <Route exact path="/users" component={() => <Users />} />
       <Route exact path="/create-user" component={() => <CreateUser />} />
+      <Route exact path="/create-bookings" component={() => <CreateBookings />} />
       <Route exact path="/settings" component={() => <Settings />} />
   </Switch>
