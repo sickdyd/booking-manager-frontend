@@ -54,6 +54,12 @@ export default {
       .catch(err => handleError(err))
   },
 
+  getDaySlots() {
+    return axios.get("/schedule/slots")
+      .then(res => res)
+      .catch(err => handleError(err))
+  },
+
   getUsers() {
     return axios.get("/users/")
       .then(res => res)
