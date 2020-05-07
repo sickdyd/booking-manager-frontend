@@ -33,7 +33,6 @@ export default ({ onComplete, loading, settings }) => {
 
     switch (field) {
       case "time":
-        console.log(e);
         newWeekSettings[index].startHours = e.hours();
         newWeekSettings[index].startMinutes= e.minutes();
         break;
@@ -47,7 +46,6 @@ export default ({ onComplete, loading, settings }) => {
         break;
     }
 
-    console.log(newWeekSettings);
     setWeekSettings(newWeekSettings);
   }
 

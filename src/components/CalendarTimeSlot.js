@@ -8,14 +8,14 @@ import CalendarAdminControls from "./CalendarAdminControls";
 
 export default (props) => {
 
-  const { id, start, status, user, fetchSchedule } = props;
+  const { unix, start, status, user, fetchSchedule } = props;
   const [loading, setLoading] = useState(false);
 
   const noop = () => {};
 
   const execute = (action) => {
     setLoading(true);
-    action(id).finally(() => {
+    action(unix).finally(() => {
       fetchSchedule()
         .finally(() => setLoading(false));
     });

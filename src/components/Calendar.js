@@ -16,9 +16,9 @@ export default ({ schedule, fetchSchedule }) => {
               day.slots.length > 0
               ?
                 day.slots.map(slot =>
-                  <div key={slot.id}>
+                  <div key={slot.unix}>
                     <CalendarTimeSlot
-                      key={slot.id}
+                      key={slot.unix}
                       fetchSchedule={fetchSchedule}
                       {...slot}
                     />

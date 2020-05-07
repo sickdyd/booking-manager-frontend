@@ -16,8 +16,8 @@ export default () => {
   const columns = [
     {
       title: "Booking date",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "unix",
+      key: "unix",
       ellipsis: true,
       width: "50%",
       render: value => moment.unix(value).format(format),
@@ -36,11 +36,11 @@ export default () => {
     dataSource: bookings,
     loading: loading,
     size: "small",
-    rowKey: "id"
+    rowKey: "unix"
   }
 
   const getNextBookings = bookings =>
-    bookings.filter(booking => !moment.unix(booking.id).isBefore(moment()))
+    bookings.filter(booking => !moment.unix(booking.unix).isBefore(moment()))
 
   const handleBookings = bookings => {
     setNextBookings(getNextBookings(bookings));
@@ -64,8 +64,8 @@ export default () => {
     if (nextBookings.length > 0) {
       return nextBookings.map(booking =>
         <Alert
-          key={booking.id}
-          message={moment.unix(booking?.id).format("LLLL")}
+          key={booking.unix}
+          message={moment.unix(booking?.unix).format("LLLL")}
           type="success"
           style={{ marginBottom: 8 }}
         />)

@@ -3,8 +3,6 @@ import { Form, Input, Button, Checkbox, InputNumber } from "antd";
 
 export default ({ id, name, surname, email, points, admin, disabled, loading, onComplete }) => {
 
-  console.log(points)
-
   const [checkAdmin, setCheckAdmin] = useState(admin);
   const [checkDisabled, setCheckDisabled] = useState(disabled);
 
@@ -18,7 +16,6 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
   };
 
   const onFinish = user => {
-    console.log(user);
     onComplete({
       ...user,
       admin: checkAdmin,

@@ -12,7 +12,6 @@ export default (onChange) => {
   const handleChange = day => {
     const newState = { ...weekCheckboxes, [day]: !weekCheckboxes[day] }
     setWeekCheckboxes(newState);
-    console.log(newState);
     // onChange(newState);
   }
 

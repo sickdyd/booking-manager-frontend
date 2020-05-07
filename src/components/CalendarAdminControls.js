@@ -5,7 +5,7 @@ import { Button, Popconfirm } from "antd";
 import { LockOutlined, UnlockOutlined, DeleteOutlined, UserOutlined, UserAddOutlined } from "@ant-design/icons";
 import ModalAddUser from "./ModalAddUser";
 
-export default ({ status, bookedAt, user, id, fetchSchedule }) => {
+export default ({ status, bookedAt, user, unix, fetchSchedule }) => {
 
   const [loading, setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ export default ({ status, bookedAt, user, id, fetchSchedule }) => {
 
   const execute = (action) => {
     setLoading(true);
-    action(id).finally(() => {
+    action(unix).finally(() => {
       fetchSchedule()
         .finally(() => setLoading(false));
     });
@@ -34,7 +34,7 @@ export default ({ status, bookedAt, user, id, fetchSchedule }) => {
       <>
         <p>Cancel booking?</p>
         <p>If you proceed you will cancel this booking:</p>
-        <p>{moment.unix(id).locale("en").format("LLLL")}</p>
+        <p>{moment.unix(unix).locale("en").format("LLLL")}</p>
         <p>{user?.name} {user?.surname}</p>
       </>,
     okText: "Ok",
@@ -65,7 +65,7 @@ export default ({ status, bookedAt, user, id, fetchSchedule }) => {
         return (
           <>
             <CircleButton onClick={() => execute(client.close)} icon={<LockOutlined />} disabled={loading} />
-            <ModalAddUser slotId={id} onOk={client.bookForUser} fetchSchedule={fetchSchedule}>
+            <ModalAddUser slotId={unix} onOk={client.bookForUser} fetchSchedule={fetchSchedule}>
                 <CircleButton icon={<UserAddOutlined />} />
             </ModalAddUser>
           </>

@@ -17,13 +17,13 @@ export default {
 
   // User
   book(slotId) {
-    return axios.post("/bookings/", { id: slotId, user: authenticate.getId() })
+    return axios.post("/bookings/", { unix: slotId, user: authenticate.getId() })
       .then(res => { message.success("予約をしました。"); return res; })
       .catch(err => handleError(err))
   },
 
-  deleteBooking(id) {
-    return axios.delete("/bookings/" + id)
+  deleteBooking(unix) {
+    return axios.delete("/bookings/" + unix)
       .then(res => { message.success("予約が削除されました。"); return res; })
       .catch(err => handleError(err))
   },
@@ -84,20 +84,20 @@ export default {
       .catch(err => handleError(err))
   },
 
-  open(id) {
-    return axios.delete("/bookings/" + id)
+  open(unix) {
+    return axios.delete("/bookings/" + unix)
       .then(res => { message.success("Slot opened"); return res; })
       .catch(err => handleError(err))
   },
 
   bookForUser(slotId, user) {
-    return axios.post("/bookings/", { id: slotId, user: user })
+    return axios.post("/bookings/", { unix: slotId, user: user })
       .then(res => { message.success("Slot assigned"); return res; })
       .catch(err => handleError(err))
   },
 
-  deleteUserBooking(id) {
-    return axios.delete("/bookings/" + id)
+  deleteUserBooking(unix) {
+    return axios.delete("/bookings/" + unix)
     .then(res => { message.success("Booking deleted"); return res; })
     .catch(err => handleError(err))
   }
