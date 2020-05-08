@@ -18,7 +18,7 @@ export default () => {
 
   const handleClick = e => {
     setCurrent(e.key);
-    history.push(e.key);
+    history.push(process.env.PUBLIC_URL + "/" + e.key);
   }
 
   return (

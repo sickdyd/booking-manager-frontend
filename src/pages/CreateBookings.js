@@ -18,7 +18,7 @@ export default () => {
         setSlots(res.data);
         setLoading(false);
       })
-      .catch(() => history.push("/"))
+      .catch(() => history.push(process.env.PUBLIC_URL + "/"))
   }, []);
 
   const onSubmit = async(userId, day, slot, from, to) => {

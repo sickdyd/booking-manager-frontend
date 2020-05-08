@@ -13,7 +13,7 @@ export default () => {
 
   const changePassword = password => {
     client.changePassword(password, authenticate.getId())
-      .then(() => history.push("/home"))
+      .then(() => history.push(process.env.PUBLIC_URL + "/home"))
       .catch(() => setLoading(false))
   }
 

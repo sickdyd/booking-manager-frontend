@@ -34,7 +34,7 @@ export default () => {
               <p>Surname: {createdUser.surname}</p>
               <p>Email: <strong>{createdUser.email}</strong></p>
               <p>Password: <strong>{createdUser.password}</strong></p>
-              <Button onClick={() => history.push("/users")}>OK</Button>
+              <Button onClick={() => history.push(process.env.PUBLIC_URL + "/users")}>OK</Button>
             </>
           :
             <FormUser onComplete={createUser} loading={loading} />

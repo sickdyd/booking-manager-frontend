@@ -10,12 +10,12 @@ import Settings from "../pages/Settings";
 
 export default () =>
   <Switch>
-      <Route exact path={["/", "/home"]} component={() => <Home />} />
-      <Route exact path="/schedule" component={() => <Schedule />} />
-      <Route exact path="/change-password" component={() => <ChangePassword />} />
+      <Route exact path={[process.env.PUBLIC_URL + "/", process.env.PUBLIC_URL + "/home"]} component={() => <Home />} />
+      <Route exact path={process.env.PUBLIC_URL + "/schedule"} component={() => <Schedule />} />
+      <Route exact path={process.env.PUBLIC_URL + "/change-password"} component={() => <ChangePassword />} />
 
-      <Route exact path="/users" component={() => <Users />} />
-      <Route exact path="/create-user" component={() => <CreateUser />} />
-      <Route exact path="/create-bookings" component={() => <CreateBookings />} />
-      <Route exact path="/settings" component={() => <Settings />} />
+      <Route exact path={process.env.PUBLIC_URL + "/users"} component={() => <Users />} />
+      <Route exact path={process.env.PUBLIC_URL + "/create-user"} component={() => <CreateUser />} />
+      <Route exact path={process.env.PUBLIC_URL + "/create-bookings"} component={() => <CreateBookings />} />
+      <Route exact path={process.env.PUBLIC_URL + "/settings"} component={() => <Settings />} />
   </Switch>
