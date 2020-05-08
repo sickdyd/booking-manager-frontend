@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import client from "../api/client";
 import styled from "styled-components";
 import FormSettings from "../components/FormSettings";
-import { Spin } from "antd";
+import Spin from "../components/Spin";
 
 export default () => {
 

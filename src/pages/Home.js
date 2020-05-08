@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import client from "../api/client";
 import authenticate from "../classes/Authenticate";
-import { Spin, Alert, Table } from "antd";
+import Spin from "../components/Spin";
+import { Alert, Table } from "antd";
 
 export default () => {
 

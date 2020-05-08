@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Spin } from "antd";
+import Spin from "../components/Spin";
 import client from "../api/client";
 import FormCreateBooking from "../components/FormCreateBooking";
 
