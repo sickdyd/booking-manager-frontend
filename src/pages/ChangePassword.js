@@ -14,7 +14,7 @@ export default () => {
   const changePassword = password => {
     client.changePassword(password, authenticate.getId())
       .then(() => history.push("/home"))
-      .finally(() => setLoading(false))
+      .catch(() => setLoading(false))
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { Form, Button, DatePicker, Select } from "antd";
+import { Form, Button, DatePicker, Select, Tooltip } from "antd";
 import DropDownUsersList from "../components/DropDownUsersList";
 import styled from "styled-components";
 
@@ -15,18 +15,18 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-export default ({ slots, loading }) => {
+export default ({ slots, loading, onSubmit }) => {
 
-  const [user, setUser] = useState();
+  const [userId, setUserId] = useState();
   const [day, setDay] = useState(0);
-  const [slot, setSlot] = useState(slots[0][0].unix);
+  const [slot, setSlot] = useState(slots[0][0]?.unix || 0);
   const [from, setFrom] = useState(moment());
-  const [to, setTo] = useState(moment().add(7, "days"));
+  const [to, setTo] = useState(moment().add(1, "months"));
 
   const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   const onFinish = async () => {
-    console.log(user, day, slot, from.unix(), to.unix());
+    onSubmit(userId, day, slot, from.unix(), to.unix());
   };
 
   return (
@@ -37,8 +37,8 @@ export default ({ slots, loading }) => {
         onFinish={onFinish}
       >
 
-        <Form.Item label="User" name="user" >
-          <DropDownUsersList setUser={setUser} />
+        <Form.Item label="User" name="user" >    
+          <DropDownUsersList setUser={setUserId} />
         </Form.Item>
 
         <Form.Item label="Day" >

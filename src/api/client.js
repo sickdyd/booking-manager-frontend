@@ -5,19 +5,16 @@ import handleError from "../notifications/handleError";
 
 export default {
 
-  // Authentication
   login(email, password) {
     return axios.post("/authenticate/", { email, password })
   },
 
-  // Schedule
   getSchedule() {
     return axios.get("/schedule/")
   },
 
-  // User
-  book(slotId) {
-    return axios.post("/bookings/", { unix: slotId, user: authenticate.getId() })
+  book(unix) {
+    return axios.post("/bookings/", { unix, user: authenticate.getId() })
       .then(res => { message.success("予約をしました。"); return res; })
       .catch(err => handleError(err))
   },
@@ -84,8 +81,8 @@ export default {
       .catch(err => handleError(err))
   },
 
-  close(slotId) {
-    return axios.post("/bookings/close", { id: slotId })
+  close(unix) {
+    return axios.post("/bookings/close", { unix })
       .then(res => { message.success("Slot closed"); return res; })
       .catch(err => handleError(err))
   },
@@ -96,9 +93,15 @@ export default {
       .catch(err => handleError(err))
   },
 
-  bookForUser(slotId, user) {
-    return axios.post("/bookings/", { unix: slotId, user: user })
+  bookForUser(unix, userId) {
+    return axios.post("/bookings/", { unix, user: userId })
       .then(res => { message.success("Slot assigned"); return res; })
+      .catch(err => handleError(err))
+  },
+
+  bookBatch(data) {
+    return axios.post("/bookings/batch", { ...data })
+      .then(res => { message.success("Slots assigned"); return res; })
       .catch(err => handleError(err))
   },
 

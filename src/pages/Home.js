@@ -15,7 +15,7 @@ export default () => {
 
   const columns = [
     {
-      title: "Booking date",
+      title: "Booking date and time",
       dataIndex: "unix",
       key: "unix",
       ellipsis: true,
@@ -51,7 +51,7 @@ export default () => {
 
     Promise.all([
       client.getUserBookings(authenticate.getId()),
-      client.getPoints(authenticate.getId())  
+      client.getPoints(authenticate.getId())
     ]).then(values => {
       handleBookings(values[0].data);
       setPoints(values[1].data.points);
@@ -62,7 +62,7 @@ export default () => {
 
   const NextBookings = () => {
     if (nextBookings.length > 0) {
-      return nextBookings.map(booking =>
+      return nextBookings.slice(0, 10).map(booking =>
         <Alert
           key={booking.unix}
           message={moment.unix(booking?.unix).format("LLLL")}
@@ -81,10 +81,10 @@ export default () => {
         <>
           <h3>Available points:</h3>
           {points}
-          <h3 style={{ marginTop: 32 }}>Future bookings:</h3>
+          <h3 style={{ marginTop: 32 }}>Future 10 bookings:</h3>
           <NextBookings />
           <h3 style={{ marginTop: 32 }}>All bookings</h3>
-          <Table {...tableProps} columns={columns} />
+          <Table {...tableProps} columns={authenticate.isAdmin() ? columns : [columns[0]] } />
         </>
   )
 }

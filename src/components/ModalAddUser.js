@@ -19,8 +19,8 @@ export default ({ children, slotId, onOk, fetchSchedule }) => {
     onOk(slotId, user)
       .then(() => fetchSchedule())
       .finally(() => {
+        setLoading(false);
         setShow(false);
-        toggle();
       })
   }
 
