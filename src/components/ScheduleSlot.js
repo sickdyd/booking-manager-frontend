@@ -4,7 +4,7 @@ import client from "../api/client";
 import Button from "./Button";
 import { Tooltip, Popconfirm, Tag } from "antd";
 import Badge from "./Badge";
-import CalendarAdminControls from "./CalendarAdminControls";
+import ScheduleAdminControls from "./ScheduleAdminControls";
 
 export default (props) => {
 
@@ -139,7 +139,7 @@ export default (props) => {
       ?
         <>
           <Tag color={slotConfig.tagColor} style={{ margin: "8px" }}>{start}</Tag>
-          <CalendarAdminControls {...props} />
+          <ScheduleAdminControls {...props} />
         </>
       :
       <Popconfirm {...slotConfig.popconfirm}>

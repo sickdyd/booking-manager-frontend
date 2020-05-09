@@ -58,7 +58,6 @@ export default {
   },
 
   getBookings() {
-    console.log("getting");
     return axios.get("/bookings")
       .then(res => res)
       .catch(err => handleError(err))

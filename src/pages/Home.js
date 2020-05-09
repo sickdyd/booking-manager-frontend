@@ -36,7 +36,7 @@ export default () => {
       dataIndex: "user",
       key: "user",
       ellipsis: true,
-      render: value => value.email,
+      render: value => value?.email,
     },
   ];
 
@@ -48,7 +48,7 @@ export default () => {
   }
 
   const getNextBookings = bookings =>
-    bookings.filter(booking => !moment.unix(booking.unix).isBefore(moment()))
+    bookings.filter(booking => (!moment.unix(booking.unix).isBefore(moment()) && booking.user))
 
   const handleBookings = bookings => {
     setNextBookings(getNextBookings(bookings));
