@@ -15,15 +15,15 @@ const checkStatus = response => {
 
   const errortext = parseError(response);
 
-  notification.error({
-    message: "Error",
+  notification.warn({
+    message: "Not completed",
     description: errortext,
   });
   
-  const error = new Error(errortext);
-  error.name = response?.status || response;
-  error.response = response;
-  throw error;
+  // const error = new Error(errortext);
+  // error.name = response?.status || response;
+  // error.response = response;
+  // throw error;
 };
 
 export default (err) => {

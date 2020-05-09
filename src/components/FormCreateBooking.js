@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { Form, Button, DatePicker, Select, Tooltip } from "antd";
+import { Form, Button, DatePicker, Select } from "antd";
 import DropDownUsersList from "../components/DropDownUsersList";
 import styled from "styled-components";
 
@@ -8,11 +8,11 @@ const { Option } = Select;
 
 const layout = {
   labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
+  wrapperCol: { span: 12 },
 };
 
 const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
+  wrapperCol: { offset: 8, span: 12 },
 };
 
 export default ({ slots, loading, onSubmit }) => {

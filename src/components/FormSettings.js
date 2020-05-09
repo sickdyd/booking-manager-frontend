@@ -6,10 +6,11 @@ export default ({ onComplete, loading, settings }) => {
 
   const layout = {
     labelCol: { span: 14 },
+    wrapperCol: { span: 12 },
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 14 },
+    wrapperCol: { offset: 14, span: 12 },
   };
 
   const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -123,8 +124,6 @@ export default ({ onComplete, loading, settings }) => {
       onFinish={onFinish}
     >
 
-      <h3 style={{ textAlign: "center", marginBottom: 32 }}>Settings</h3>
-
       <Form.Item name="lastBookableDay" label="Last available day">
         <DatePicker allowClear={false} />
       </Form.Item>
@@ -161,7 +160,6 @@ export default ({ onComplete, loading, settings }) => {
 
       <Form.Item {...tailLayout}>
         <Button
-          size="small"
           type="primary"
           loading={loading}
           htmlType="submit"

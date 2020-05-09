@@ -4,12 +4,12 @@ import { Form, Input, Button } from "antd";
 export default ({ id, onComplete, loading }) => {
 
   const layout = {
-    labelCol: { span: 6 },
-    wrapperCol: { span: 16 },
+    labelCol: { span: 8 },
+    wrapperCol: { span: 12 },
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 6, span: 12 },
+    wrapperCol: { offset: 8, span: 12 },
   };
 
   const onFinish = ({ password }) => onComplete(password, id);
@@ -23,7 +23,7 @@ export default ({ id, onComplete, loading }) => {
       <Form.Item
         label="New"
         name="password"
-        rules={[{ required: true, message: "Please input the password." }]}
+        rules={[{ required: true, message: "Minimum 8 characters.", min: 8 }]}
       >
         <Input.Password />
       </Form.Item>
@@ -33,11 +33,7 @@ export default ({ id, onComplete, loading }) => {
       label="Confirm"
       dependencies={["password"]}
       hasFeedback
-      rules={[
-        {
-          required: true,
-          message: "Please confirm the password!",
-        },
+      rules={[{ required: true, message: "Please confirm the password!" },
         ({ getFieldValue }) => ({
           validator(rule, value) {
             if (!value || getFieldValue("password") === value) {
@@ -52,7 +48,7 @@ export default ({ id, onComplete, loading }) => {
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button size="small" type="primary" htmlType="submit" loading={loading}>
+        <Button type="primary" htmlType="submit" loading={loading}>
           Change password
         </Button>
       </Form.Item>

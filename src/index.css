@@ -27,15 +27,19 @@ code {
     monospace;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.form,
+.defaultBox {
   margin: 16px;
   padding: 16px 16px 24px 16px;
   border-radius: 4px;
   background-color: white;
   border: 1px solid #ddd;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 

@@ -7,12 +7,12 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
   const [checkDisabled, setCheckDisabled] = useState(disabled);
 
   const layout = {
-    labelCol: { span: 6 },
-    wrapperCol: { span: 14 },
+    labelCol: { span: 8 },
+    wrapperCol: { span: 12 },
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 6, span: 12 },
+    wrapperCol: { offset: 8, span: 12 },
   };
 
   const onFinish = user => {
@@ -82,7 +82,6 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
 
       <Form.Item {...tailLayout}>
         <Button
-          size="small"
           type="primary"
           loading={loading}
           htmlType="submit"

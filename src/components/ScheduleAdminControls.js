@@ -19,9 +19,6 @@ export default ({ status, bookedAt, user, unix, fetchSchedule }) => {
     });
   }
 
-  // const CircleButton = props =>
-  //   <Button shape="circle" size="small" style={{ marginRight: "8px" }} {...props} />
-
   const CircleButton = forwardRef((props, ref) => // doesn't give the warning
     <div style={{ display: "inline-block" }} ref={ref}>
       <Button shape="circle" size="small" style={{ marginRight: "8px" }} {...props} />

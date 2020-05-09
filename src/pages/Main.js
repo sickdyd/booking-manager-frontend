@@ -5,18 +5,17 @@ import Header from "../components/Header";
 import HeaderMenu from "../components/HeaderMenu";
 import Routes from "../routes/Routes";
 
-const { Content, Footer } = Layout;
+const { Footer } = Layout;
 
 export default () =>
   <Wrapper>
     <Layout className="layout" theme="light">
       <Header />
       <HeaderMenu />
-      <Content style={{ padding: "16px 20px" }}>
+      <div className="content">
         <Routes />
-      </Content>
+      </div>
       <Footer className="footer" style={{ textAlign: "center" }}>
-        Booking Manager ©2020 Created by Sickdyd
       </Footer>
     </Layout>
   </Wrapper>
@@ -27,8 +26,21 @@ const Wrapper = styled.div`
     min-height: 100vh;
   }
 
+  .content {
+    display: flex;
+    justify-content: center;
+    padding: 4em 25vw 0 25vw;
+  }
+
   .footer {
     font-size: 11px;
+  }
+
+  @media only screen and (max-width: 800px) {
+
+    .content {
+      padding: 2em 16px 0 16px;
+    }
   }
 
 `

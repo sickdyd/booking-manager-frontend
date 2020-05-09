@@ -13,26 +13,15 @@ export default () => {
 
   const changePassword = password => {
     client.changePassword(password, authenticate.getId())
-      .then(() => history.push(process.env.PUBLIC_URL + "/home"))
+      .then(() => history.push("/schedule"))
       .catch(() => setLoading(false))
   }
 
   return (
-    <Wrapper>
-      <div className="form" style={{ paddingTop: 48 }}>
-        <FormPassword
-          loading={loading}
-          onComplete={changePassword}
-          />
-      </div>
-    </Wrapper>
+    <FormPassword
+      loading={loading}
+      onComplete={changePassword}
+    />
+
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`

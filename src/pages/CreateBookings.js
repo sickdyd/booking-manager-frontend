@@ -29,9 +29,6 @@ export default () => {
     loading
     ? <Spin />
     : 
-      <>
-        <h3 style={{ textAlign: "center", marginBottom: 32 }}>Create batch bookings</h3>
-        <FormCreateBooking onSubmit={onSubmit} slots={slots} />
-      </>
+      <FormCreateBooking onSubmit={onSubmit} slots={slots} />
   );
 };

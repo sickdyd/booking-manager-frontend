@@ -14,7 +14,7 @@ export default () => {
   return (
     <Wrapper>
       <Header className="header">
-        <div className="logo">予約マネージャー</div>
+        <div className="logo">Booking</div>
         {
           authenticate.authenticated &&
           <Tooltip title="ログアウト">

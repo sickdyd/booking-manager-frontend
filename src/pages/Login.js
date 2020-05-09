@@ -22,7 +22,7 @@ export default () => {
   const onFinish = async({ email, password }) => {
     setLoading(true);
     authenticate.login(email, password)
-      .then(() => history.push(process.env.PUBLIC_URL + "/home"))
+      .then(() => history.push("/schedule"))
       .catch(() => setLoading(false))
   };
 

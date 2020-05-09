@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Main from "./pages/Main";
 
 export default () =>
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route exact path="/login"><Login /></Route>
       <ProtectedRoute path="/" component={() => <Main />} />

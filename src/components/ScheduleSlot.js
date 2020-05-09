@@ -110,7 +110,7 @@ export default (props) => {
             onClick: noop,
             popconfirm: { disabled: true },
             icon: "processing",
-            text: `${user?.name} ${user?.surname}`,
+            text: `${user?.surname}`,
           }
         case "unavailable":
           return {
