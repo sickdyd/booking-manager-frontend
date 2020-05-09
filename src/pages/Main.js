@@ -1,5 +1,4 @@
 import React from "react";
-import "moment/locale/ja";
 import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../components/Header";

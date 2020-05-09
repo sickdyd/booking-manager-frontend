@@ -57,6 +57,13 @@ export default {
       .catch(err => handleError(err))
   },
 
+  getBookings() {
+    console.log("getting");
+    return axios.get("/bookings")
+      .then(res => res)
+      .catch(err => handleError(err))
+  },
+
   getUsers() {
     return axios.get("/users/")
       .then(res => res)
@@ -66,6 +73,12 @@ export default {
   updateUser(user, userId) {
     return axios.patch("/users/" + userId, user)
       .then(res => { message.success("User data udpated"); return res; })
+      .catch(err => handleError(err))
+  },
+
+  deleteUser(userId) {
+    return axios.delete("/users/" + userId)
+      .then(res => { message.success("User deleted"); return res; })
       .catch(err => handleError(err))
   },
 

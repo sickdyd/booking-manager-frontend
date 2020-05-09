@@ -1,10 +1,24 @@
 import React from "react";
-import { Table } from "antd";
-import { KeyOutlined, LockOutlined, CheckOutlined } from "@ant-design/icons";
+import client from "../api/client";
+import { Table, Popconfirm } from "antd";
+import { KeyOutlined, LockOutlined, CheckOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import Media from "react-media"
 import FormEditUser from "../components/FormEditUser";
 
 export default ({ data, loading, fetchUsers }) => {
+
+  const deleteUserPopConfirm = {
+    disabled: false,
+    placement: "left",
+    title: <p>Delete user?<br /><br />Delete user and all boookings.</p>,
+    okText: "OK",
+    cancelText: "Cancel"
+  }
+
+  const DeleteButton = ({ userId }) =>
+    <Popconfirm { ...deleteUserPopConfirm } onConfirm={() => client.deleteUser(userId)} >
+      <CloseCircleOutlined />
+    </Popconfirm>
 
   const expandable = {
     expandedRowRender: record => <FormEditUser {...record} fetchUsers={fetchUsers} />
@@ -31,7 +45,7 @@ export default ({ data, loading, fetchUsers }) => {
       dataIndex: "email",
       key: "email",
       ellipsis: true,
-      width: "30%",
+      width: "20%",
     },
     {
       title: <LockOutlined />,
@@ -46,6 +60,13 @@ export default ({ data, loading, fetchUsers }) => {
       render: value => value ? <CheckOutlined /> : "",
       dataIndex: "admin",
       width: "10%"
+    },
+    {
+      title: "",
+      key: "id",
+      dataIndex: "id",
+      render: value => <DeleteButton userId={value} />,
+      width: "5%"
     },
   ];
 

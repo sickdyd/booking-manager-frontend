@@ -12,15 +12,16 @@ export default () => {
   const [points, setPoints] = useState(0);
   const [nextBookings, setNextBookings] = useState([]);
 
-  const format = "MMMM Do YYYY, h:mm"
+  const format = authenticate.isAdmin()
+  ? "YYYY/MM/DD - HH:mm"
+  : "LLLL"
 
   const columns = [
     {
-      title: "Booking date and time",
+      title: "Slot",
       dataIndex: "unix",
       key: "unix",
       ellipsis: true,
-      width: "50%",
       render: value => moment.unix(value).format(format),
     },
     {
@@ -28,8 +29,14 @@ export default () => {
       dataIndex: "bookedAt",
       key: "bookedAt",
       ellipsis: true,
-      width: "50%",
       render: value => moment.unix(value).format(format),
+    },
+    {
+      title: "User",
+      dataIndex: "user",
+      key: "user",
+      ellipsis: true,
+      render: value => value.email,
     },
   ];
 
@@ -51,7 +58,9 @@ export default () => {
   useEffect(() => {
 
     Promise.all([
-      client.getUserBookings(authenticate.getId()),
+      authenticate.isAdmin()
+      ? client.getBookings()
+      : client.getUserBookings(authenticate.getId()),
       client.getPoints(authenticate.getId())
     ]).then(values => {
       handleBookings(values[0].data);
@@ -63,13 +72,17 @@ export default () => {
 
   const NextBookings = () => {
     if (nextBookings.length > 0) {
-      return nextBookings.slice(0, 10).map(booking =>
-        <Alert
+      return nextBookings.slice(0, 10).map(booking => {
+        const message = authenticate.isAdmin()
+          ? moment.unix(booking?.unix).format(format) + " | " + booking.user.name + " " + booking.user.surname
+          : moment.unix(booking?.unix).format(format)
+        return <Alert
           key={booking.unix}
-          message={moment.unix(booking?.unix).format("LLLL")}
+          message={message}
           type="success"
           style={{ marginBottom: 8 }}
-        />)
+        />
+      })
     } else {
       return <p><i>No future bookings.</i></p>
     }      
@@ -82,7 +95,7 @@ export default () => {
         <>
           <h3>Available points:</h3>
           {points}
-          <h3 style={{ marginTop: 32 }}>Future 10 bookings:</h3>
+          <h3 style={{ marginTop: 32 }}>Next 10 bookings:</h3>
           <NextBookings />
           <h3 style={{ marginTop: 32 }}>All bookings</h3>
           <Table {...tableProps} columns={authenticate.isAdmin() ? columns : [columns[0]] } />
