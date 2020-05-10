@@ -10,25 +10,25 @@ import authenticate from "../classes/Authenticate";
 
 export default () => {
 
-  const [schedule, setSchedule] = useState([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const convertToTableValues = data => {
+  const handleData = data => {
 
-    const result = data.map(day => ({
+    const result = data.schedule.map(day => ({
       key: day.unix,
       unix: day.unix,
       day: moment.unix(day.unix).format("LL dddd"),
       slots: day.slots
     }));
 
-    setSchedule(result);
+    setData({ schedule: result, totalItems: data.totalItems });
 
   }
 
-  const fetchSchedule = async() => 
-    client.getSchedule()
-      .then(res => convertToTableValues(res?.data || []))
+  const fetchSchedule = async(page, perPage) => 
+    client.getSchedule(page, perPage)
+      .then(res => handleData(res?.data || []))
       .catch(err => handleError(err))
       .finally(() => setLoading(false))
 
@@ -40,8 +40,8 @@ export default () => {
     ? <Spin />
     :
       <Wrapper>
-        {!authenticate.isAdmin() && <PointsDisplay schedule={schedule} />}
-        <ScheduleTable schedule={schedule} fetchSchedule={fetchSchedule} />
+        {!authenticate.isAdmin() && <PointsDisplay schedule={data.schedule} />}
+        <ScheduleTable schedule={data.schedule} fetchSchedule={fetchSchedule} totalItems={data.totalItems} />
       </Wrapper>
 }
 

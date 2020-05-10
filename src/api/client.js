@@ -9,8 +9,8 @@ export default {
     return axios.post("/authenticate/", { email, password })
   },
 
-  getSchedule() {
-    return axios.get("/schedule/")
+  getSchedule(page, perPage) {
+    return axios.get("/schedule/?page=" + page + "&perPage=" + perPage)
   },
 
   book(unix) {

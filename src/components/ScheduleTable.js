@@ -4,7 +4,7 @@ import ScheduleSlot from "./ScheduleSlot";
 import { Table, Badge } from "antd";
 import { CalendarOutlined, LikeOutlined } from "@ant-design/icons";
 
-export default ({ schedule, fetchSchedule }) => {
+export default ({ schedule, totalItems, fetchSchedule }) => {
 
   const slots = slots => {
     if (slots.length > 0) {
@@ -48,13 +48,21 @@ export default ({ schedule, fetchSchedule }) => {
   const expandable = {
     expandedRowRender: record => slots(record.slots)
   };
+
+  const handleOnChange = pag =>{
+    console.log(pag);
+    fetchSchedule(pag.current, pag.pageSize);
+  }
   
   const tableProps = {
     expandable,
     columns,
     dataSource: schedule,
-    size: "small"
+    size: "small",
+    style: { width: "100%" },
+    pagination: { total: totalItems || 10 },
+    onChange: handleOnChange
   }
 
-  return <Table style={{ width: "100%" }} { ...tableProps } />
+  return <Table { ...tableProps } />
 }
