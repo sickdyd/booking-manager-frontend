@@ -10,7 +10,7 @@ export default {
   },
 
   getSchedule(page, perPage) {
-    return axios.get("/schedule/?page=" + page + "&perPage=" + perPage)
+    return axios.get("/schedule/")
   },
 
   book(unix) {

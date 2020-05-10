@@ -60,7 +60,6 @@ export default ({ schedule, totalItems, fetchSchedule }) => {
     dataSource: schedule,
     size: "small",
     style: { width: "100%" },
-    pagination: { total: totalItems || 10 },
     onChange: handleOnChange
   }
 
