@@ -1,4 +1,5 @@
 import { notification } from "antd";
+import authenticate from "../classes/Authenticate";
 
 const parseError = response => {
   if (response?.data?.error?.message) {
@@ -9,8 +10,13 @@ const parseError = response => {
 }
 
 const checkStatus = response => {
+
   if (response?.status >= 200 && response?.status < 300) {
     return response;
+  }
+
+  if (response?.status === 401) {
+    authenticate.logout();
   }
 
   const errortext = parseError(response);

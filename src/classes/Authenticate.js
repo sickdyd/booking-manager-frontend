@@ -21,28 +21,26 @@ class Authenticate {
 
     return client.login(email, password)
       .then(res => {
-        this.setAuthentication(res.data.token);
-        localStorage.setItem("bmtoken", res.data.token);
+        this.setAuthentication(res.data);
+        localStorage.setItem("bmtoken", res.data);
       })
       .catch(err => handleError(err));
   }
 
   setAuthentication(token) {
 
-    this.authenticated = true;
-    this.token = token;
-
     const {
       _id,
-      name,
       admin,
     } = jwt_decode(token);
 
+    this.token = token;
     this.id = _id;
-    this.name = name;
     this.admin = admin;
 
     axios.defaults.headers.common["x-auth-token"] = token;
+
+    this.authenticated = true;
 
   }
 
