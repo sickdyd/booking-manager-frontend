@@ -15,11 +15,10 @@ export default ({ schedule }) => {
   }, [schedule]);
 
   return (
-    <p style={{ textAlign: "center" }}>
-      You have
-        <strong style={{ color: points === 0 ? "red" : "green" }}>
-          {loading ? "..." : points}
-        </strong> points.
+    <p style={{ textAlign: "center", marginBottom: 48 }}>
+      You have <strong style={{ color: points === 0 ? "red" : "green" }}>
+        {loading ? "..." : points}
+      </strong> points.
     </p>
   )
 }
