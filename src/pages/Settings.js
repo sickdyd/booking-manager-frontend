@@ -26,7 +26,7 @@ export default () => {
         setSettings(res.data);
         setLoading(false);
       })
-      .catch(() => history.push(process.env.PUBLIC_URL + "/"))
+      .catch(() => history.push("/"))
   }
 
   useEffect(() => {

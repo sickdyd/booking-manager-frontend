@@ -25,7 +25,7 @@ export default () => {
 
   const fetchUsers = () =>
     client.getUsers()
-      .then(res => convert(res.data))
+      .then(res => convert(res?.data || []))
       .finally(() => setLoading(false))
   // eslint-disable-next-line
   useEffect(() => { fetchUsers() }, []);

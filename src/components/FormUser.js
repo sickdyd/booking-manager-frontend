@@ -6,6 +6,8 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
   const [checkAdmin, setCheckAdmin] = useState(admin);
   const [checkDisabled, setCheckDisabled] = useState(disabled);
 
+  const verifyPoints = points;
+
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 12 },
@@ -19,7 +21,8 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
     onComplete({
       ...user,
       admin: checkAdmin,
-      disabled: checkDisabled
+      disabled: checkDisabled,
+      verifyPoints
     }, id);
   }
 

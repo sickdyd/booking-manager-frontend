@@ -16,7 +16,7 @@ const checkStatus = response => {
   const errortext = parseError(response);
 
   notification.warn({
-    message: "Not completed",
+    message: "Error",
     description: errortext,
   });
   
@@ -29,6 +29,7 @@ const checkStatus = response => {
 export default (err) => {
   try {
     checkStatus(err?.response ? err?.response : err)
+    return Promise.reject();
   }
   catch(e) {
     console.log(e);

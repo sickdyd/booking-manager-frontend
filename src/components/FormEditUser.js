@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import client from "../api/client";
 import styled from "styled-components";
 import FormUser from "../components/FormUser"
 import FormPassword from "../components/FormPassword";
 
 export default (props) => {
+
+  const history = useHistory();
 
   const { fetchUsers } = props;
 
@@ -13,6 +16,7 @@ export default (props) => {
   const execute = async(action) => {
     action
       .then(() => fetchUsers())
+      .catch(() => history.push("/users"))
       .finally(() => setLoading(false))
   }
 

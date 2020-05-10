@@ -10,7 +10,7 @@ export default ({ schedule }) => {
 
   useEffect(() => {
     client.getPoints(authenticate.getId())
-      .then(res => setPoints(res.data.points))
+      .then(res => setPoints(res?.data?.points))
       .finally(() => setLoading(false))
   // eslint-disable-next-line
   }, [schedule]);
