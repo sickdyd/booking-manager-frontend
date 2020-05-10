@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/booking-manager-frontend/static/css/main.a679b4f2.chunk.css",
-    "main.js": "/booking-manager-frontend/static/js/main.12714f83.chunk.js",
-    "main.js.map": "/booking-manager-frontend/static/js/main.12714f83.chunk.js.map",
+    "main.js": "/booking-manager-frontend/static/js/main.2425bc11.chunk.js",
+    "main.js.map": "/booking-manager-frontend/static/js/main.2425bc11.chunk.js.map",
     "runtime-main.js": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js",
     "runtime-main.js.map": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js.map",
     "static/css/2.a72c35d3.chunk.css": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css",
     "static/js/2.22204daa.chunk.js": "/booking-manager-frontend/static/js/2.22204daa.chunk.js",
     "static/js/2.22204daa.chunk.js.map": "/booking-manager-frontend/static/js/2.22204daa.chunk.js.map",
     "index.html": "/booking-manager-frontend/index.html",
-    "precache-manifest.00066566858b15b6ae142545b7f262ec.js": "/booking-manager-frontend/precache-manifest.00066566858b15b6ae142545b7f262ec.js",
+    "precache-manifest.b0b216cfa7d34ec23ecaa218d4b5630f.js": "/booking-manager-frontend/precache-manifest.b0b216cfa7d34ec23ecaa218d4b5630f.js",
     "service-worker.js": "/booking-manager-frontend/service-worker.js",
     "static/css/2.a72c35d3.chunk.css.map": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css.map",
     "static/css/main.a679b4f2.chunk.css.map": "/booking-manager-frontend/static/css/main.a679b4f2.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.a72c35d3.chunk.css",
     "static/js/2.22204daa.chunk.js",
     "static/css/main.a679b4f2.chunk.css",
-    "static/js/main.12714f83.chunk.js"
+    "static/js/main.2425bc11.chunk.js"
   ]
 }
