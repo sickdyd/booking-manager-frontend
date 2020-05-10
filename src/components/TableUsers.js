@@ -1,5 +1,6 @@
 import React from "react";
 import client from "../api/client";
+import authenticate from "../classes/Authenticate";
 import { Table, Popconfirm } from "antd";
 import { KeyOutlined, LockOutlined, CheckOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import Media from "react-media"
@@ -65,7 +66,7 @@ export default ({ data, loading, fetchUsers }) => {
       title: "",
       key: "id",
       dataIndex: "id",
-      render: value => <DeleteButton userId={value} />,
+      render: value => authenticate.getId() === value ? null : <DeleteButton userId={value} />,
       width: "5%"
     },
   ];

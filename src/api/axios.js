@@ -1,8 +1,8 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    // baseURL: "http://localhost:3333/api",
-    baseURL: "https://sickdyd-booking-manager.herokuapp.com/api"
+    baseURL: "http://localhost:3333/api",
+    // baseURL: "https://sickdyd-booking-manager.herokuapp.com/api"
 });
 
 axios.defaults.headers.post["Content-Type"] = "application/json";

@@ -6,7 +6,7 @@ export default () =>
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "80vh"
+    height: "40vh"
   }}>
     <Spin />
   </div>

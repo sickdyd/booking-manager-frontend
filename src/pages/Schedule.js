@@ -33,7 +33,7 @@ export default () => {
       .finally(() => setLoading(false))
 
   useEffect(() => {
-    fetchSchedule();
+    fetchSchedule()
   // eslint-disable-next-line
   }, []);
 

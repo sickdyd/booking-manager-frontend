@@ -23,6 +23,7 @@ export default ({ schedule, fetchSchedule }) => {
     authenticate.isAdmin()
     ? slots.filter(slot => slot?.user !== null).length
     : slots.filter(slot => slot?.user?._id === authenticate.getId()).length
+    
   const getFreeSlots = slots => slots.filter(slot => (slot.status === "available") !== (slot.status === "availableUncancellable")).length;
 
   const columns = [
