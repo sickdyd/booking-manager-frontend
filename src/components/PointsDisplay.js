@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import client from "../api/client";
 import authenticate from "../classes/Authenticate";
-import Spin from "../components/Spin";
 
 export default ({ schedule }) => {
 
   const [loading, setLoading] = useState(true);
-  const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState();
 
   useEffect(() => {
     client.getPoints(authenticate.getId())
@@ -16,11 +15,11 @@ export default ({ schedule }) => {
   }, [schedule]);
 
   return (
-    loading
-      ? <Spin />
-      :
-        <p style={{ textAlign: "center" }}>
-          You have <strong style={{ color: points === 0 ? "red" : "green" }}>{points}</strong> points.
-        </p>
+    <p style={{ textAlign: "center" }}>
+      You have
+        <strong style={{ color: points === 0 ? "red" : "green" }}>
+          {loading ? "..." : points}
+        </strong> points.
+    </p>
   )
 }
