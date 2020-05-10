@@ -50,7 +50,7 @@ class Authenticate {
     this.authenticated = false;
     localStorage.removeItem("bmtoken");
     axios.defaults.headers.common["x-auth-token"] = undefined;
-    history.push(process.env.PUBLIC_URL + "/login");
+    history.push("/login");
   }
 
   isAuthenticated() {

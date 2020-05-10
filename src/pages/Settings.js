@@ -31,6 +31,7 @@ export default () => {
 
   useEffect(() => {
     getSettings();
+  // eslint-disable-next-line
   }, []);
 
   return (

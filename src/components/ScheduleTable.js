@@ -2,9 +2,8 @@ import React from "react";
 import authenticate from "../classes/Authenticate";
 import ScheduleSlot from "./ScheduleSlot";
 import { Table, Badge } from "antd";
-import { CalendarOutlined, LikeOutlined } from "@ant-design/icons";
 
-export default ({ schedule, totalItems, fetchSchedule }) => {
+export default ({ schedule, fetchSchedule }) => {
 
   const slots = slots => {
     if (slots.length > 0) {
@@ -20,8 +19,11 @@ export default ({ schedule, totalItems, fetchSchedule }) => {
     }
   }
 
-  const getBookedSlots = slots => slots.filter(slot => slot?.user?._id === authenticate.getId()).length;
-  const getFreeSlots = slots => slots.filter(slot => slot.status === "available").length;
+  const getBookedSlots = slots =>
+    authenticate.isAdmin()
+    ? slots.filter(slot => slot?.user !== null).length
+    : slots.filter(slot => slot?.user?._id === authenticate.getId()).length
+  const getFreeSlots = slots => slots.filter(slot => (slot.status === "available") !== (slot.status === "availableUncancellable")).length;
 
   const columns = [
     {
@@ -30,18 +32,16 @@ export default ({ schedule, totalItems, fetchSchedule }) => {
       key: "day",
     },
     {
-      title: <CalendarOutlined />,
       dataIndex: "slots",
       key: Math.random(),
       width: "5%",
-      render: slots => <Badge count={getBookedSlots(slots)} />,
+      render: slots => <Badge title="Reservations" count={getBookedSlots(slots)} style={{ backgroundColor: "#108ee9" }} />
     },
     {
-      title: <LikeOutlined />,
       dataIndex: "slots",
       key: Math.random(),
       width: "5%",
-      render: slots => <Badge count={getFreeSlots(slots)} style={{ backgroundColor: '#52c41a' }} />,
+      render: slots => <Badge title="Free slots" count={getFreeSlots(slots)} style={{ backgroundColor: "#52c41a" }} />
     },
   ];
   

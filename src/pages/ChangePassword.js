@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import authenticate from "../classes/Authenticate";
 import client from "../api/client";
-import styled from "styled-components";
 import FormPassword from "../components/FormPassword";
 
 export default () => {

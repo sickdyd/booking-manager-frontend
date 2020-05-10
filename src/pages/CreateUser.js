@@ -24,14 +24,14 @@ export default () => {
   return (
     createdUser
       ? 
-        <>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <h3 style={{ marginBottom: 24 }}>User created</h3>
           <p>Name: {createdUser.name}</p>
           <p>Surname: {createdUser.surname}</p>
           <p>Email: <strong>{createdUser.email}</strong></p>
           <p>Password: <strong>{createdUser.password}</strong></p>
-          <Button onClick={() => history.push(process.env.PUBLIC_URL + "/users")}>OK</Button>
-        </>
+          <Button onClick={() => history.push("/users")}>OK</Button>
+        </div>
       :
         <FormUser onComplete={createUser} loading={loading} />
   );

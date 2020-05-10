@@ -10,7 +10,7 @@ export default ({ id, name, surname, email, points, admin, disabled, loading, on
 
   const layout = {
     labelCol: { span: 8 },
-    wrapperCol: { span: 12 },
+    wrapperCol: { span: 16 },
   };
   
   const tailLayout = {

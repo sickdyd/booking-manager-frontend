@@ -18,7 +18,8 @@ export default () => {
         setSlots(res.data);
         setLoading(false);
       })
-      .catch(() => history.push(process.env.PUBLIC_URL + "/"))
+      .catch(() => history.push("/"))
+  // eslint-disable-next-line
   }, []);
 
   const onSubmit = async(userId, day, slot, from, to) => {
