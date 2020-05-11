@@ -8,16 +8,20 @@ import ScheduleAdminControls from "./ScheduleAdminControls";
 
 export default (props) => {
 
-  const { unix, start, status, user, fetchSchedule } = props;
+  const { unix, start, status, user, fetchSchedule, booking, setBooking } = props;
   const [loading, setLoading] = useState(false);
 
   const noop = () => {};
 
   const execute = (action) => {
+    setBooking(true);
     setLoading(true);
     action(unix).finally(() => {
       fetchSchedule()
-        .finally(() => setLoading(false));
+        .finally(() => {
+          setBooking(false);
+          setLoading(false);
+        });
     });
   }
 
@@ -144,7 +148,7 @@ export default (props) => {
       :
       <Popconfirm {...slotConfig.popconfirm}>
         <Tooltip placement="left" title={slotConfig.tooltip}>
-          <Button type={slotConfig.button} onClick={slotConfig.onClick} loading={loading}>
+          <Button type={slotConfig.button} onClick={slotConfig.onClick} loading={loading} disabled={!loading && booking} >
             {start}
           </Button>
         </Tooltip>

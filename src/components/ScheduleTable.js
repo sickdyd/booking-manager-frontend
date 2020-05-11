@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import authenticate from "../classes/Authenticate";
 import ScheduleSlot from "./ScheduleSlot";
 import PointsDisplay from "./PointsDisplay";
@@ -6,12 +6,14 @@ import { Table, Badge } from "antd";
 
 export default ({ schedule, fetchSchedule }) => {
 
+  const [booking, setBooking] = useState(false);
+
   const slots = slots => {
     if (slots.length > 0) {
       return (
         <div className="defaultBox" style={{ display: "flex", justifyContent: "center" }}>
           <div>
-            {slots.map((slot, i) =><div key={i}><ScheduleSlot { ...slot } fetchSchedule={fetchSchedule} /></div>)}
+            {slots.map((slot, i) =><div key={i}><ScheduleSlot { ...slot } fetchSchedule={fetchSchedule} booking={booking} setBooking={setBooking} /></div>)}
           </div>
         </div>
       )
