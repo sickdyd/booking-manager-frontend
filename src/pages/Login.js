@@ -28,34 +28,37 @@ export default () => {
 
   return (
     <Wrapper>
-      <Form
-        {...layout}
-        name="basic"
-        initialValues={{ remember: true, email: "test@gmail.com", password: "testing123" }}
-        onFinish={onFinish}
-      >
-        <Form.Item
-          label="マイル"
-          name="email"
-          rules={[{ required: true, message: "Please input your email." }]}
+      <div className="container defaultBox">
+        <h2>ようこそ!</h2>
+        <Form
+          {...layout}
+          name="basic"
+          initialValues={{ remember: true, email: "test@gmail.com", password: "testing123" }}
+          onFinish={onFinish}
         >
-          <Input />
-        </Form.Item>
+          <Form.Item
+            label="マイル"
+            name="email"
+            rules={[{ required: true, message: "Please input your email." }]}
+          >
+            <Input />
+          </Form.Item>
 
-        <Form.Item
-          label="パスワード"
-          name="password"
-          rules={[{ required: true, message: "Please input your password." }]}
-        >
-          <Input.Password />
-        </Form.Item>
+          <Form.Item
+            label="パスワード"
+            name="password"
+            rules={[{ required: true, message: "Please input your password." }]}
+          >
+            <Input.Password />
+          </Form.Item>
 
-        <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit" loading={loading}>
-            ログイン
-          </Button>
-        </Form.Item>
-      </Form>
+          <Form.Item {...tailLayout}>
+            <Button type="primary" htmlType="submit" loading={loading}>
+              ログイン
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
     </Wrapper>
   );
 };
@@ -65,4 +68,16 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    box-shadow: 10px 10px 62px -25px rgba(0,0,0,0.75);
+
+    h2 {
+      margin: 16px 0 32px 0;
+    }
+  }
 `
