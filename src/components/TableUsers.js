@@ -17,7 +17,7 @@ export default ({ data, loading, fetchUsers }) => {
   }
 
   const DeleteButton = ({ userId }) =>
-    <Popconfirm { ...deleteUserPopConfirm } onConfirm={() => client.deleteUser(userId)} >
+    <Popconfirm { ...deleteUserPopConfirm } onConfirm={() => client.deleteUser(userId).then(() => fetchUsers())} >
       <CloseCircleOutlined />
     </Popconfirm>
 

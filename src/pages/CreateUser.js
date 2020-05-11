@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import client from "../api/client";
 import FormUser from "../components/FormUser";
 import generatePassword from "../utilities/generatePassword";
-import Button from "../components/Button";
+import { Button } from "antd"
 
 export default () => {
 
@@ -24,13 +24,14 @@ export default () => {
   return (
     createdUser
       ? 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <h3 style={{ marginBottom: 24 }}>User created</h3>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: 32 }}>
+          <h3 style={{ marginBottom: 32 }}>User created</h3>
           <p>Name: {createdUser.name}</p>
           <p>Surname: {createdUser.surname}</p>
           <p>Email: <strong>{createdUser.email}</strong></p>
           <p>Password: <strong>{createdUser.password}</strong></p>
-          <Button onClick={() => history.push("/users")}>OK</Button>
+          <br />
+          <Button type="primary" onClick={() => history.push("/users")}>OK</Button>
         </div>
       :
 
