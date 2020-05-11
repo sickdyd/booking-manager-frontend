@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/booking-manager-frontend/static/css/main.fa699386.chunk.css",
-    "main.js": "/booking-manager-frontend/static/js/main.0cb99143.chunk.js",
-    "main.js.map": "/booking-manager-frontend/static/js/main.0cb99143.chunk.js.map",
+    "main.js": "/booking-manager-frontend/static/js/main.c6e15833.chunk.js",
+    "main.js.map": "/booking-manager-frontend/static/js/main.c6e15833.chunk.js.map",
     "runtime-main.js": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js",
     "runtime-main.js.map": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js.map",
     "static/css/2.a72c35d3.chunk.css": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css",
-    "static/js/2.820cc1f3.chunk.js": "/booking-manager-frontend/static/js/2.820cc1f3.chunk.js",
-    "static/js/2.820cc1f3.chunk.js.map": "/booking-manager-frontend/static/js/2.820cc1f3.chunk.js.map",
+    "static/js/2.50495689.chunk.js": "/booking-manager-frontend/static/js/2.50495689.chunk.js",
+    "static/js/2.50495689.chunk.js.map": "/booking-manager-frontend/static/js/2.50495689.chunk.js.map",
     "index.html": "/booking-manager-frontend/index.html",
-    "precache-manifest.4e9384d4b62e9790b26ce9915603830e.js": "/booking-manager-frontend/precache-manifest.4e9384d4b62e9790b26ce9915603830e.js",
+    "precache-manifest.130dd2ed4457ee9c48b466a662775164.js": "/booking-manager-frontend/precache-manifest.130dd2ed4457ee9c48b466a662775164.js",
     "service-worker.js": "/booking-manager-frontend/service-worker.js",
     "static/css/2.a72c35d3.chunk.css.map": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css.map",
     "static/css/main.fa699386.chunk.css.map": "/booking-manager-frontend/static/css/main.fa699386.chunk.css.map",
-    "static/js/2.820cc1f3.chunk.js.LICENSE.txt": "/booking-manager-frontend/static/js/2.820cc1f3.chunk.js.LICENSE.txt"
+    "static/js/2.50495689.chunk.js.LICENSE.txt": "/booking-manager-frontend/static/js/2.50495689.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.511b6c0c.js",
     "static/css/2.a72c35d3.chunk.css",
-    "static/js/2.820cc1f3.chunk.js",
+    "static/js/2.50495689.chunk.js",
     "static/css/main.fa699386.chunk.css",
-    "static/js/main.0cb99143.chunk.js"
+    "static/js/main.c6e15833.chunk.js"
   ]
 }
