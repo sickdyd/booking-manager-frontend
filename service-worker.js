@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/booking-manager-frontend/precache-manifest.12c0807dd583c228ea8165479d13e276.js"
+  "/booking-manager-frontend/precache-manifest.88d358899a3bba61853bf038b7b312ee.js"
 );
 
 self.addEventListener('message', (event) => {
