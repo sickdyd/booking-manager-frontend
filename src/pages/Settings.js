@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import client from "../api/client";
-import styled from "styled-components";
 import FormSettings from "../components/FormSettings";
 import Spin from "../components/Spin";
 
@@ -39,19 +38,13 @@ export default () => {
     ?
       <Spin />
     :
-      <Wrapper>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center "}}>
+        <h2 style={{ margin: 32 }}>Settings</h2>
         <FormSettings
           settings={settings}
           loading={loading}
           onComplete={saveSettings}
           />
-      </Wrapper>
+      </div>
   )
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`

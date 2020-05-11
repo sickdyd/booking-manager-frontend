@@ -30,6 +30,9 @@ export default () => {
     loading
     ? <Spin />
     : 
-      <FormCreateBooking onSubmit={onSubmit} slots={slots} />
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center "}}>
+        <h2 style={{ margin: 32 }}>Create bookings</h2>
+        <FormCreateBooking onSubmit={onSubmit} slots={slots} />
+      </div>
   );
 };

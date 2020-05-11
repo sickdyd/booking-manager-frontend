@@ -1,35 +1,39 @@
 import React from "react";
-import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../components/Header";
 import HeaderMenu from "../components/HeaderMenu";
 import Routes from "../routes/Routes";
 
-const { Footer } = Layout;
-
 export default () =>
   <Wrapper>
-    <Layout className="layout" theme="light">
+    <div>
       <Header />
       <HeaderMenu />
-      <div className="content">
-        <Routes />
+      <div className="wrapper">
+        <div className="content">
+          <Routes />
+        </div>
       </div>
-      <Footer className="footer" style={{ textAlign: "center" }}>
-      </Footer>
-    </Layout>
+    </div>
   </Wrapper>
 
 const Wrapper = styled.div`
 
-  .layout {
-    min-height: 100vh;
+  height: 100%;
+
+  .wrapper {
+    
+    padding: 4em 25vw 0 25vw;
+    min-height: 100%;
   }
 
   .content {
     display: flex;
     justify-content: center;
-    padding: 4em 25vw 0 25vw;
+    background-color: rgb(250, 250, 250);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    
   }
 
   .footer {
@@ -38,8 +42,8 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 800px) {
 
-    .content {
-      padding: 2em 16px 0 16px;
+    .wrapper {
+      padding: 1em;
     }
   }
 

@@ -6,11 +6,11 @@ export default ({ onComplete, loading, settings }) => {
 
   const layout = {
     labelCol: { span: 14 },
-    wrapperCol: { span: 12 },
+    wrapperCol: { offet: 14 },
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 14, span: 12 },
+    wrapperCol: { offset: 14, span: 14 },
   };
 
   const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -124,27 +124,27 @@ export default ({ onComplete, loading, settings }) => {
       onFinish={onFinish}
     >
 
-      <Form.Item name="lastBookableDay" label="Last available day">
+      <Form.Item name="lastBookableDay" label="Last day">
         <DatePicker allowClear={false} />
       </Form.Item>
 
-      <Form.Item name="slotDuration" label="Slot duration (mins)">
+      <Form.Item name="slotDuration" label="Slot duration (mins)" hidden={true}>
         <InputNumber min={5} max={1440} step={5} disabled />
       </Form.Item>
 
-      <Form.Item name="interval" label="Interval (mins)">
+      <Form.Item name="interval" label="Interval (m)" hidden={true}>
         <InputNumber min={0} max={1440} step={5} disabled />
       </Form.Item>
 
-      <Form.Item name="expireOffset" label="Slot expiration (mins)">
+      <Form.Item name="expireOffset" label="Expiration (m)">
         <InputNumber min={0} max={1440} step={5} />
       </Form.Item>
 
-      <Form.Item name="cancelationNotice" label="Slot cancellation (hours)">
+      <Form.Item name="cancelationNotice" label="Cancellation (h)">
         <InputNumber min={0} max={365} step={1} />
       </Form.Item>
 
-      <Form.Item name="dailyLimit" label="Bookings limit per day">
+      <Form.Item name="dailyLimit" label="Bookings ">
         <InputNumber min={0} step={1} />
       </Form.Item>
 

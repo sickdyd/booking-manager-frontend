@@ -1,6 +1,7 @@
 import React from "react";
 import authenticate from "../classes/Authenticate";
 import ScheduleSlot from "./ScheduleSlot";
+import PointsDisplay from "./PointsDisplay";
 import { Table, Badge } from "antd";
 
 export default ({ schedule, fetchSchedule }) => {
@@ -28,9 +29,10 @@ export default ({ schedule, fetchSchedule }) => {
 
   const columns = [
     {
-      title: "Schedule",
+      title: authenticate.isAdmin() ? "Schedule" : <PointsDisplay schedule={schedule} />,
       dataIndex: "day",
       key: "day",
+      render: day => <strong>{day}</strong>
     },
     {
       dataIndex: "slots",
@@ -50,10 +52,7 @@ export default ({ schedule, fetchSchedule }) => {
     expandedRowRender: record => slots(record.slots)
   };
 
-  const handleOnChange = pag =>{
-    console.log(pag);
-    fetchSchedule(pag.current, pag.pageSize);
-  }
+  const handleOnChange = pag => fetchSchedule(pag.current, pag.pageSize);
   
   const tableProps = {
     expandable,

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import styled from "styled-components";
 import client from "../api/client";
 import handleError from "../notifications/handleError";
 import ScheduleTable from "../components/ScheduleTable";
 import Spin from "../components/Spin";
-import PointsDisplay from "../components/PointsDisplay";
-import authenticate from "../classes/Authenticate";
 
 export default () => {
 
@@ -39,15 +36,5 @@ export default () => {
 
   return loading
     ? <Spin />
-    :
-      <Wrapper>
-        {!authenticate.isAdmin() && <PointsDisplay schedule={schedule} />}
-        <ScheduleTable schedule={schedule} fetchSchedule={fetchSchedule} />
-      </Wrapper>
+    : <ScheduleTable schedule={schedule} fetchSchedule={fetchSchedule} />
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`

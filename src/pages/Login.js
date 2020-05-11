@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 2em;
-    box-shadow: 10px 10px 62px -25px rgba(0,0,0,0.75);
+    box-shadow: var(--box-shadow);
 
     h2 {
       margin: 16px 0 32px 0;

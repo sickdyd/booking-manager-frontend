@@ -67,7 +67,7 @@ export default ({ data, loading, fetchUsers }) => {
       key: "id",
       dataIndex: "id",
       render: value => authenticate.getId() === value ? null : <DeleteButton userId={value} />,
-      width: "5%"
+      width: "10%"
     },
   ];
 

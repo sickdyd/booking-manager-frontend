@@ -17,10 +17,12 @@ export default () => {
   }
 
   return (
-    <FormPassword
-      loading={loading}
-      onComplete={changePassword}
-    />
-
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center "}}>
+      <h2 style={{ margin: 32 }}>Change password</h2>
+      <FormPassword
+        loading={loading}
+        onComplete={changePassword}
+      />
+    </div>
   )
 }

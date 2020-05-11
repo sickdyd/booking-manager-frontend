@@ -33,6 +33,10 @@ export default () => {
           <Button onClick={() => history.push("/users")}>OK</Button>
         </div>
       :
+
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center "}}>
+        <h2 style={{ margin: 32 }}>Create user</h2>
         <FormUser onComplete={createUser} loading={loading} />
+      </div>
   );
 };

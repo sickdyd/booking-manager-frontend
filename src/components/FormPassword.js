@@ -5,11 +5,11 @@ export default ({ id, onComplete, loading }) => {
 
   const layout = {
     labelCol: { span: 8 },
-    wrapperCol: { span: 12 },
+    wrapperCol: { span: 16 },
   };
   
   const tailLayout = {
-    wrapperCol: { offset: 8, span: 12 },
+    wrapperCol: { offset: 6, span: 12 },
   };
 
   const onFinish = ({ password }) => onComplete(password, id);
@@ -20,6 +20,7 @@ export default ({ id, onComplete, loading }) => {
       name="password"
       onFinish={onFinish}
     >
+
       <Form.Item
         label="New"
         name="password"
