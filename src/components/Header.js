@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { Layout, Tooltip, Button } from "antd";
 import styled from "styled-components";
 import authenticate from "../classes/Authenticate";
@@ -9,8 +8,6 @@ const { Header } = Layout;
 
 export default () => {
 
-  const history = useHistory()
-
   return (
     <Wrapper>
       <Header className="header">
@@ -18,7 +15,7 @@ export default () => {
         {
           authenticate.authenticated &&
           <Tooltip title="ログアウト">
-            <Button size="small" onClick={() => authenticate.logout(history)} shape="circle" icon={<LogoutOutlined />} />
+            <Button size="small" onClick={() => authenticate.logout()} shape="circle" icon={<LogoutOutlined />} />
           </Tooltip>
         }
       </Header>
