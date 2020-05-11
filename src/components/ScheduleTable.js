@@ -59,6 +59,7 @@ export default ({ schedule, fetchSchedule }) => {
   const tableProps = {
     expandable,
     columns,
+    pagination: { pageSize: 7 },
     dataSource: schedule,
     size: "small",
     style: { width: "100%" },
