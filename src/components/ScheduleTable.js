@@ -61,7 +61,7 @@ export default ({ schedule, fetchSchedule }) => {
     columns,
     pagination: { pageSize: 7 },
     dataSource: schedule,
-    size: "small",
+    // size: "small",
     style: { width: "100%" },
     onChange: handleOnChange
   }

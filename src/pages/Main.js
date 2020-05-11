@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
   .wrapper {
     
-    padding: 4em 25vw 0 25vw;
+    padding: 4em 5vw 0 5vw;
     min-height: 100%;
   }
 
