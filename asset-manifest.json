@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/booking-manager-frontend/static/css/main.a679b4f2.chunk.css",
-    "main.js": "/booking-manager-frontend/static/js/main.b8b436c8.chunk.js",
-    "main.js.map": "/booking-manager-frontend/static/js/main.b8b436c8.chunk.js.map",
+    "main.css": "/booking-manager-frontend/static/css/main.15ea3d60.chunk.css",
+    "main.js": "/booking-manager-frontend/static/js/main.313db2ef.chunk.js",
+    "main.js.map": "/booking-manager-frontend/static/js/main.313db2ef.chunk.js.map",
     "runtime-main.js": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js",
     "runtime-main.js.map": "/booking-manager-frontend/static/js/runtime-main.511b6c0c.js.map",
     "static/css/2.a72c35d3.chunk.css": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css",
-    "static/js/2.b1c839ed.chunk.js": "/booking-manager-frontend/static/js/2.b1c839ed.chunk.js",
-    "static/js/2.b1c839ed.chunk.js.map": "/booking-manager-frontend/static/js/2.b1c839ed.chunk.js.map",
+    "static/js/2.40489e8f.chunk.js": "/booking-manager-frontend/static/js/2.40489e8f.chunk.js",
+    "static/js/2.40489e8f.chunk.js.map": "/booking-manager-frontend/static/js/2.40489e8f.chunk.js.map",
     "index.html": "/booking-manager-frontend/index.html",
-    "precache-manifest.88d358899a3bba61853bf038b7b312ee.js": "/booking-manager-frontend/precache-manifest.88d358899a3bba61853bf038b7b312ee.js",
+    "precache-manifest.8ee090c44252b2b322d8f57d5bc42bf0.js": "/booking-manager-frontend/precache-manifest.8ee090c44252b2b322d8f57d5bc42bf0.js",
     "service-worker.js": "/booking-manager-frontend/service-worker.js",
     "static/css/2.a72c35d3.chunk.css.map": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css.map",
-    "static/css/main.a679b4f2.chunk.css.map": "/booking-manager-frontend/static/css/main.a679b4f2.chunk.css.map",
-    "static/js/2.b1c839ed.chunk.js.LICENSE.txt": "/booking-manager-frontend/static/js/2.b1c839ed.chunk.js.LICENSE.txt"
+    "static/css/main.15ea3d60.chunk.css.map": "/booking-manager-frontend/static/css/main.15ea3d60.chunk.css.map",
+    "static/js/2.40489e8f.chunk.js.LICENSE.txt": "/booking-manager-frontend/static/js/2.40489e8f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.511b6c0c.js",
     "static/css/2.a72c35d3.chunk.css",
-    "static/js/2.b1c839ed.chunk.js",
-    "static/css/main.a679b4f2.chunk.css",
-    "static/js/main.b8b436c8.chunk.js"
+    "static/js/2.40489e8f.chunk.js",
+    "static/css/main.15ea3d60.chunk.css",
+    "static/js/main.313db2ef.chunk.js"
   ]
 }
