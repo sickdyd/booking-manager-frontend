@@ -33,7 +33,7 @@ const Wrapper = styled.div`
     background-color: rgb(250, 250, 250);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    
+    margin-bottom: 4em;
   }
 
   .footer {
@@ -44,6 +44,10 @@ const Wrapper = styled.div`
 
     .wrapper {
       padding: 1em;
+    }
+
+    .content {
+      margin-bottom: 1em;
     }
   }
 
