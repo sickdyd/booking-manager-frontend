@@ -10,7 +10,7 @@ export default ({ schedule, fetchSchedule }) => {
       return (
         <div className="defaultBox" style={{ display: "flex", justifyContent: "center" }}>
           <div>
-            {slots.map(slot =><div><ScheduleSlot { ...slot } fetchSchedule={fetchSchedule} /></div>)}
+            {slots.map((slot, i) =><div key={i}><ScheduleSlot { ...slot } fetchSchedule={fetchSchedule} /></div>)}
           </div>
         </div>
       )

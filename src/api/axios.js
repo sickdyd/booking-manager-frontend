@@ -1,7 +1,5 @@
 import Axios from "axios";
 import authenticate from "../classes/Authenticate";
-import jwt_decode from "jwt-decode";
-import moment from "moment";
 
 let baseURL = "http://localhost:3333/api";
 
@@ -28,8 +26,6 @@ axios.interceptors.response.use(response => {
   const newToken = response.headers["x-auth-token"];
 
   if (newToken) {
-    const { exp } = jwt_decode(newToken)
-    console.log(moment.unix(exp).format("HH:mm:ss"))
     authenticate.setAuthentication(newToken);
     localStorage.setItem("bmtoken", newToken);
   }

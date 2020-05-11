@@ -15,7 +15,7 @@ export default ({ status, bookedAt, user, unix, fetchSchedule }) => {
     setLoading(true);
     action(unix).finally(() => {
       fetchSchedule()
-        .finally(() => setLoading(false));
+        //.finally(() => setLoading(false));
     });
   }
 

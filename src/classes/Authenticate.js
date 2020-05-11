@@ -2,7 +2,6 @@ import jwt_decode from "jwt-decode";
 import client from "../api/client";
 import handleError from "../notifications/handleError";
 import axios from "../api/axios";
-import moment from "moment";
 
 class Authenticate {
 
@@ -33,10 +32,7 @@ class Authenticate {
     const {
       _id,
       admin,
-      exp,
     } = jwt_decode(token);
-
-    console.log(moment.unix(exp).format("HH:mm:ss"))
 
     this.token = token;
     this.id = _id;
