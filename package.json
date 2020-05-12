@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "homepage": "https://sickdyd-booking-manager-fe.herokuapp.com/",
+  "homepage": "https://moschetta.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
