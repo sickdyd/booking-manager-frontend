@@ -2,6 +2,7 @@ import jwt_decode from "jwt-decode";
 import client from "../api/client";
 import handleError from "../notifications/handleError";
 import axios from "../api/axios";
+import moment from "moment";
 
 class Authenticate {
 
@@ -11,10 +12,7 @@ class Authenticate {
 
     const token = localStorage.getItem("bmtoken");
 
-    if (token) {
-     this.setAuthentication(token);
-     this.authenticated = true;
-    }
+    if (token) this.setAuthentication(token);
   }
 
   async login(email, password) {
@@ -32,15 +30,21 @@ class Authenticate {
     const {
       _id,
       admin,
+      exp,
     } = jwt_decode(token);
 
     this.token = token;
     this.id = _id;
     this.admin = admin;
+    this.exp = exp;
 
     axios.defaults.headers.common["x-auth-token"] = token;
 
-    this.authenticated = true;
+    if (this.isExpired()) {
+      this.authenticated = false;
+    } else {
+      this.authenticated = true;
+    }
 
   }
 
@@ -49,6 +53,10 @@ class Authenticate {
     localStorage.removeItem("bmtoken");
     axios.defaults.headers.common["x-auth-token"] = undefined;
     history.push("/login");
+  }
+
+  isExpired() {
+    return (!moment().isBefore(moment.unix(this.exp)));
   }
 
   isAuthenticated() {

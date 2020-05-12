@@ -17,6 +17,7 @@ const checkStatus = response => {
 
   if (response?.status === 401) {
     authenticate.authenticated = false;
+    window.location.reload();
   }
 
   const errortext = parseError(response);
