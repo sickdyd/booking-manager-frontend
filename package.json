@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "homepage": "https://sickdyd.github.io/booking-manager-frontend/",
+  "homepage": "https://sickdyd-booking-manager-fe.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
