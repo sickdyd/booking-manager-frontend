@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65ee6fb9ab401e5c8bc9071d1677aebe",
+    "revision": "25fce1e513d76ff94857cc5cdeceb5f0",
     "url": "/booking-manager-frontend/index.html"
   },
   {
-    "revision": "5ec7f7c41d9b31b411d2",
+    "revision": "e7d65c4e254569f08ca1",
     "url": "/booking-manager-frontend/static/css/2.a72c35d3.chunk.css"
   },
   {
-    "revision": "258afda818c451ad5af1",
+    "revision": "3432c8e8476d6741b594",
     "url": "/booking-manager-frontend/static/css/main.fa699386.chunk.css"
   },
   {
-    "revision": "5ec7f7c41d9b31b411d2",
-    "url": "/booking-manager-frontend/static/js/2.5eb3b272.chunk.js"
+    "revision": "e7d65c4e254569f08ca1",
+    "url": "/booking-manager-frontend/static/js/2.8f96f1c8.chunk.js"
   },
   {
     "revision": "4fdb92f5a0a11be5d79ae606cb253c2b",
-    "url": "/booking-manager-frontend/static/js/2.5eb3b272.chunk.js.LICENSE.txt"
+    "url": "/booking-manager-frontend/static/js/2.8f96f1c8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "258afda818c451ad5af1",
-    "url": "/booking-manager-frontend/static/js/main.05f4ed41.chunk.js"
+    "revision": "3432c8e8476d6741b594",
+    "url": "/booking-manager-frontend/static/js/main.e7b46cbc.chunk.js"
   },
   {
     "revision": "de399203bd23cc016647",
