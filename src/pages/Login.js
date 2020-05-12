@@ -33,7 +33,7 @@ export default () => {
         <Form
           {...layout}
           name="basic"
-          initialValues={{ remember: true, email: "admin@gmail.com", password: "testing123" }}
+          initialValues={{ remember: true }}
           onFinish={onFinish}
         >
           <Form.Item
