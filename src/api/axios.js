@@ -4,7 +4,7 @@ import authenticate from "../classes/Authenticate";
 let baseURL = "http://localhost:3333/api";
 
 if (process.env.NODE_ENV === "production") {
-  baseURL = "https://sickdyd-booking-manager.herokuapp.com/api"
+  baseURL = "https://moschettabianca.herokuapp.com/api"
 }
 
 console.log("Sending requests to: ", baseURL);

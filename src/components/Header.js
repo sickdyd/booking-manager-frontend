@@ -11,6 +11,11 @@ export default () => {
 
   const history = useHistory();
 
+  const logout = () => {
+    authenticate.logout();
+    history.push("/login");
+  }
+
   return (
     <Wrapper>
       <Header className="header">
@@ -18,7 +23,7 @@ export default () => {
         {
           authenticate.authenticated &&
           <Tooltip title="ログアウト">
-            <Button size="small" onClick={() => authenticate.logout(history)} shape="circle" icon={<LogoutOutlined />} />
+            <Button size="small" onClick={() => logout()} shape="circle" icon={<LogoutOutlined />} />
           </Tooltip>
         }
       </Header>

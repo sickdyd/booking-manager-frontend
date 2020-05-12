@@ -16,8 +16,8 @@ const checkStatus = response => {
   }
 
   if (response?.status === 401) {
-    authenticate.authenticated = false;
-    window.location.reload();
+    authenticate.logout();
+    window.location.href = "/login";
   }
 
   const errortext = parseError(response);

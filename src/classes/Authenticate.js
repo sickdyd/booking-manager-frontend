@@ -41,18 +41,17 @@ class Authenticate {
     axios.defaults.headers.common["x-auth-token"] = token;
 
     if (this.isExpired()) {
-      this.authenticated = false;
+      this.logout();
     } else {
       this.authenticated = true;
     }
 
   }
 
-  logout(history) {
+  logout() {
     this.authenticated = false;
     localStorage.removeItem("bmtoken");
     axios.defaults.headers.common["x-auth-token"] = undefined;
-    history.push("/login");
   }
 
   isExpired() {
