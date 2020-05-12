@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import authenticate from "../classes/Authenticate";
+import moment from "moment";
 import ScheduleSlot from "./ScheduleSlot";
 import PointsDisplay from "./PointsDisplay";
 import { Table, Badge } from "antd";
@@ -24,17 +25,20 @@ export default ({ schedule, fetchSchedule }) => {
 
   const getBookedSlots = slots =>
     authenticate.isAdmin()
-    ? slots.filter(slot => slot?.user !== null).length
-    : slots.filter(slot => slot?.user?._id === authenticate.getId()).length
+      ? slots.filter(slot => slot?.user !== null).length
+      : slots.filter(slot => slot?.user?._id === authenticate.getId()).length
     
   const getFreeSlots = slots => slots.filter(slot => (slot.status === "available") !== (slot.status === "availableUncancellable")).length;
 
   const columns = [
     {
       title: authenticate.isAdmin() ? "Schedule" : <PointsDisplay schedule={schedule} />,
-      dataIndex: "day",
+      dataIndex: "unix",
       key: "day",
-      render: day => <strong>{day}</strong>
+      render: unix =>
+        <>
+          <strong>{moment.unix(unix).format("dd")}</strong> 📅 {moment.unix(unix).format("LL")}
+        </>
     },
     {
       dataIndex: "slots",

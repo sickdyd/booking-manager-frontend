@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 import client from "../api/client";
 import handleError from "../notifications/handleError";
 import ScheduleTable from "../components/ScheduleTable";
@@ -15,7 +14,6 @@ export default () => {
     const result = data.map(day => ({
       key: day.unix,
       unix: day.unix,
-      day: moment.unix(day.unix).format("LL dddd"),
       slots: day.slots
     }));
 
